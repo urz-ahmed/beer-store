@@ -6,6 +6,7 @@ const API_URL = 'https://api.punkapi.com/v2/beers';
 function App() {
   const [beers, setBeers] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const fetchBeers = async () => {
@@ -32,7 +33,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`${dark ? 'App-dark' : 'App'}`}>
       <header className="App-header">
         <h1>Punk API Beers</h1>
         <input
@@ -41,10 +42,11 @@ function App() {
           value={searchQuery}
           onChange={handleSearch}
         />
+        <div className="dark-toggle" onClick={()=>{setDark(!dark)}}>Toggle Dark/Light Mode</div>
       </header>
       <div className="card-container">
         {beers.map(beer => (
-          <div key={beer.id} className="beer-card">
+          <div key={beer.id} className={`${dark ? 'beer-card-dark' : 'beer-card'}`}>
             <img src={beer.image_url} alt={beer.name} />
             <h2>{beer.name}</h2>
             <p>{beer.tagline}</p>
