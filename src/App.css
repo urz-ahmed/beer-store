@@ -9,7 +9,7 @@ body {
 }
 
 .App {
-  background-color: beige;
+  background-color: rgb(106, 67, 87);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,16 @@ body {
   width: 100%;
   color: white;
 }
+.App-header h1{
+  display: flex;
+  text-align: center;
+}
+.header-title {
+  
+  text-align: center;
+  
+}
+
 
 .card-container {
   display: grid;
@@ -38,7 +48,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #665b5b;
-  background-color: rgb(133, 221, 209);
+  background-color: rgb(184, 205, 202);
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 10px;
@@ -50,7 +60,7 @@ body {
 }
 
 .beer-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .beer-card img {
@@ -63,10 +73,20 @@ body {
 input {
   width: 100%;
   padding: 8px;
-  margin: 10px 0;
+  margin: 10px 2px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
+
+/* Center the placeholder text vertically */
+input::placeholder {
+  line-height: normal; /* You can adjust the line-height value as needed */
+}
+
 
 /* Extra small screens (phones) */
 @media (max-width: 576px) {

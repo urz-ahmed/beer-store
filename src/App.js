@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
-//here i can use environment variable but i haven't use because i want to show you api url to show the transparency
+import Navbar from './components/Navbar';
+import About from './components/About';
+
 const API_URL = 'https://api.punkapi.com/v2/beers';
 
 function App() {
   const [beers, setBeers] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showAbout, setShowAbout] = useState(false);
+
+  const toggleAbout = () => {
+    setShowAbout(!showAbout);
+  };
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   useEffect(() => {
     const fetchBeers = async () => {
@@ -27,29 +38,23 @@ function App() {
     fetchBeers();
   }, [searchQuery]);
 
-  const handleSearch = event => {
-    setSearchQuery(event.target.value);
-  };
-
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Punk API Beers</h1>
-        <input
-          type="text"
-          placeholder="Search by beer name"
-          value={searchQuery}
-          onChange={handleSearch}
-        />
+        <Navbar searchQuery={searchQuery} handleSearch={handleSearch} toggleAbout={toggleAbout} />
       </header>
       <div className="card-container">
-        {beers.map(beer => (
-          <div key={beer.id} className="beer-card">
-            <img src={beer.image_url} alt={beer.name} />
-            <h2>{beer.name}</h2>
-            <p>{beer.tagline}</p>
-          </div>
-        ))}
+        {showAbout ? (
+          <About />
+        ) : (
+          beers.map((beer) => (
+            <div key={beer.id} className="beer-card">
+              <img src={beer.image_url} alt={beer.name} />
+              <h2>{beer.name}</h2>
+              <p>{beer.tagline}</p>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
