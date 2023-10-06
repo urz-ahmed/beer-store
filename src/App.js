@@ -8,34 +8,10 @@ import Footer from './components/Footer';
 const API_URL = 'https://api.punkapi.com/v2/beers';
 
 function App() {
-  const [beers, setBeers] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+
   const [Mode, setMode] = useState('light'); // Set 'light' as the initial state
   const [alert, setAlert] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchBeers = async () => {
-  //     try {
-  //       let url = API_URL;
-
-  //       if (searchQuery) {
-  //         url += `?beer_name=${searchQuery}`;
-  //       }
-
-  //       const response = await fetch(url);
-  //       const data = await response.json();
-  //       setBeers(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchBeers();
-  // }, [searchQuery]);
-
-  // const handleSearch = event => {
-  //   setSearchQuery(event.target.value);
-  // };
 
   const showAlert = (message, type) => {
     setAlert({
