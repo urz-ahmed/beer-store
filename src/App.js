@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import Home from './pages/Home';
+import Footer from './components/Footer';
 
 const API_URL = 'https://api.punkapi.com/v2/beers';
 
@@ -65,13 +66,7 @@ function App() {
         <Alert alert={alert} />
         <Home />
       </div>
-
-
-
-      <footer className={`App-footer ${Mode === 'dark' ? 'dark-mode' : ''}`}>
-        <p>&copy; {new Date().getFullYear()} BearStore Company Limited. All Rights Reserved. </p>
-      </footer>
-
+      <Footer Mode={Mode}/>
     </div>
   );
 }
