@@ -9,29 +9,27 @@ body {
 }
 
 .App {
-  background-color: rgb(106, 67, 87);
+  /* background-color: rgba(217, 226, 235, 0.838); */
   min-height: 100vh;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   padding: 20px;
   width: 100%;
   color: white;
-}
-.App-header h1{
-  display: flex;
-  text-align: center;
-}
-.header-title {
-  
-  text-align: center;
   
 }
 
+.App-header h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkcyan;
+}
 
 .card-container {
   display: grid;
@@ -48,7 +46,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #665b5b;
-  background-color: rgb(184, 205, 202);
+  background-color: rgb(133, 221, 209);
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 10px;
@@ -58,9 +56,13 @@ body {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
-
+.dark-mode .beer-card {
+  background-color: rgba(8, 4, 60, 0.785); /* Background color for dark mode */
+  color: #fff; /* Text color for dark mode */
+  /* Add other styles for dark mode here */
+}
 .beer-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .beer-card img {
@@ -73,18 +75,24 @@ body {
 input {
   width: 100%;
   padding: 8px;
-  margin: 10px 2px;
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+.App-footer{
+  margin: 10px ;
+  padding-top: 5px ;
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: center;
-  background-color: white;
+  background-color: #ccc;
+  color:black;
+  border-radius: 5px;
 }
 
-/* Center the placeholder text vertically */
-input::placeholder {
-  line-height: normal; /* You can adjust the line-height value as needed */
+.dark-mode .App-footer {
+  color: white; 
+  background-color:rgba(0, 0, 0, 0.816);
 }
 
 
