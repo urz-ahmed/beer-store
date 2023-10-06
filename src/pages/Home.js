@@ -6,8 +6,6 @@ const Home = () =>{
 
     const [beers, setBeers] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const [Mode, setMode] = useState('light'); // Set 'light' as the initial state
-    const [alert, setAlert] = useState(null);
 
     useEffect(() => {
         const fetchBeers = async () => {

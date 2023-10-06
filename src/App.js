@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-
-const API_URL = 'https://api.punkapi.com/v2/beers';
 
 function App() {
 
