@@ -30,14 +30,14 @@ const Layout = () => {
     }
   };
   return (
-    <div>
+    <div className="wrapper">
       <div className={`App ${Mode === "dark" ? "dark-mode" : ""}`}>
-        <Navbar title="TextUtils" mode={Mode} toggleMode={toggleMode} />
-        <div className="container my-3">
+        <Navbar title="TextUtils" mode={Mode} toggleMode={toggleMode} className="navbar"/>
+        <div className="my-3 outlet">
           <Alert alert={alert} />
-          <Outlet className="container" />
+          <Outlet/>
         </div>
-        <Footer Mode={Mode} />
+        <Footer Mode={Mode}  className="footer"/>
       </div>
     </div>
   );

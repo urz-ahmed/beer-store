@@ -6,25 +6,45 @@
 
 body {
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-bottom: 4px solid #555; /* Border at the bottom with a shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+.outlet {
+  flex: 1;
+  padding: 20px;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 
 .App {
-  /* background-color: rgba(217, 226, 235, 0.838); */
   min-height: 100vh;
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }
 
 .App-header {
-  /* background-color: #282c34; */
   padding: 20px;
   width: 100%;
   color: white;
-  
 }
 
-.App-header h1{
+.App-header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +58,7 @@ body {
   justify-items: center;
   align-items: stretch;
   margin-top: 20px;
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 
 .beer-card {
@@ -57,19 +77,18 @@ body {
   transition: transform 0.2s;
 }
 .dark-mode .beer-card {
-  background-color: rgba(8, 4, 60, 0.785); /* Background color for dark mode */
-  color: #fff; /* Text color for dark mode */
-  /* Add other styles for dark mode here */
+  background-color: rgba(8, 4, 60, 0.785);
+  color: #fff;
 }
 .beer-card:hover {
   transform: translateY(-5px);
 }
 
 .beer-card img {
-  width: 80%; 
-  max-height: 120px; 
-  object-fit: contain; 
-  margin: 0 auto; 
+  width: 80%;
+  max-height: 120px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 input {
@@ -79,47 +98,46 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-.App-footer{
-  margin: 10px ;
-  padding-top: 5px ;
+.App-footer {
+  margin-top: 10px;
+  padding-top: 5px;
   display: flex;
   text-align: center;
   justify-content: center;
   background-color: #ccc;
-  color:black;
-  border-radius: 5px;
+  color: black;
+  border-top: 4px solid #555; /* Border at the bottom with a shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 
 .dark-mode .App-footer {
-  color: white; 
-  background-color:rgba(0, 0, 0, 0.816);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.816);
 }
-.content{
-  background-color: #E5E4E2;
+.content {
+  background-color: #e5e4e2;
   padding: 10px;
   border-radius: 10px;
 }
-/* Container for the decorative title */
+
 .title-container {
   text-align: center;
   margin-top: 20px;
 }
 
-/* Title text */
 .title-text {
   font-size: 2.5rem;
   font-weight: bold;
-  background-color: #E5E4E2;
+  background-color: #e5e4e2;
   padding: 10px;
   border: 2px solid black;
   border-radius: 10px;
-  color: #333; /* Text color */
+  color: #333;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
 }
 
-/* Decorative line under the title */
 .title-line {
   position: relative;
   bottom: 0;
@@ -127,11 +145,11 @@ input {
   transform: translateX(-50%);
   width: 80%;
   height: 5px;
-  background-color: #5d6972; /* Decorative line color */
+  background-color: #5d6972;
 }
 
 .title-line:hover {
-  background-color: #333; /* Change line color on hover */
+  background-color: #333;
 }
 
 .contributors-container {
@@ -144,7 +162,7 @@ input {
 .card {
   width: 190px;
   height: 254px;
-  background-image: linear-gradient(144deg,#2f2731, #343b1e 60%,#d8c5df);
+  background-image: linear-gradient(144deg, #2f2731, #343b1e 60%, #d8c5df);
   border: none;
   border-radius: 10px;
   padding-top: 10px;
@@ -191,7 +209,7 @@ input {
   color: #111111;
   font-weight: 600;
 }
-.card button a{
+.card button a {
   text-decoration: none;
   color: inherit;
 }
@@ -200,9 +218,6 @@ input {
   background: #212121;
   color: #ffffff;
 }
-/*===========================
-  Section Title One CSS
-===========================*/
 .section-title-one {
   text-align: center;
   max-width: 550px;
@@ -237,7 +252,6 @@ input {
   }
 }
 
-/* Extra small screens (phones) */
 @media (max-width: 576px) {
   .card-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
