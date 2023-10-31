@@ -9,7 +9,7 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const showHealthAlert = () => {
-    toast.info('Beer is injurious to health');
+    toast.warn('Beer is injurious to health');
   };
 
   useEffect(() => {
